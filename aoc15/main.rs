@@ -25,8 +25,7 @@ fn main() {
     let mut res = 0;
 
     pq.push((0,0,0));
-    while pq.len() > 0 {
-        let (w,i,j) = pq.pop().unwrap();
+    while let Some((w,i,j)) = pq.pop(){
         if seen[i][j] == 1 { continue; };
         seen[i][j] = 1;
         if i == 5*n-1 && j == 5*m-1 {
